@@ -420,8 +420,8 @@ header .main-nav a:focus {
 .home-post-content blockquote,
 .main-content blockquote,
 .post-content blockquote {
-  margin-top: 0.5rem;   /* reduce space above */
-  margin-bottom: 0.5rem; /* reduce space below */
+  margin-top: 0 !important;       /* remove top gap */
+  margin-bottom: 0.5rem !important;
   padding-left: 1rem;
   border-left: 4px solid var(--accent, #8b0000);
   color: #333;
@@ -436,7 +436,7 @@ header .main-nav a:focus {
 /* Nuke top margins on paragraphs inside our articles */
 .content-with-sidebar .main-content article.post-summary .home-post-content p,
 .main-article .content p,
-.main-content .content p 
+.main-content .content p,
 .post-content p {
   margin-top: 0 !important;
   margin-bottom: 1rem !important;  /* keep comfortable space after */
@@ -446,7 +446,7 @@ header .main-nav a:focus {
 /* Also remove the first child’s top margin, whatever it is (p, blockquote, list, etc.) */
 .content-with-sidebar .main-content article.post-summary .home-post-content > *:first-child,
 .main-article .content > *:first-child,
-.main-content .content > *:first-child
+.main-content .content > *:first-child,
 .post-content > *:first-child {
   margin-top: 0 !important;
 }
@@ -456,7 +456,7 @@ header .main-nav a:focus {
 .main-article .content blockquote,
 .main-content .content blockquote,
 .post-content blockquote {
-  margin-top: 0.5rem !important;
+  margin-top: 0 !important;
   margin-bottom: 0.5rem !important;
   padding-left: 1rem;
   border-left: 4px solid var(--accent, #8b0000);
