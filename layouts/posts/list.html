@@ -1,32 +1,23 @@
 {{ define "main" }}
 <div class="content-with-sidebar">
   <div class="main-content">
-    <h1>{{ .Title }}</h1>
+    <h1 class="archive-title">Archive</h1>
 
-    {{ range .Pages }}
-    <article class="post-summary">
-      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    {{/* Group posts by year, then month */}}
+    {{ range $year, $yearPages := .Pages.GroupByDate "2006" }}
+      <h2 class="archive-year">{{ $year }}</h2>
 
-      <p class="post-meta">
-        <time>{{ .Date | time.Format "2 January 2006, 3:04 pm" }}</time>
-        {{ if .Params.tags }}
-          · Tags:
-          {{ range $i, $tag := .Params.tags }}
-            {{ if $i }}, {{ end }}
-            <a href="{{ "tags/" | relLangURL }}{{ $tag | urlize }}/">#{{ $tag }}</a>
+      {{ range $month, $monthPages := $yearPages.Pages.GroupByDate "January" }}
+        <h3 class="archive-month">{{ $month }}</h3>
+        <ul class="archive-list">
+          {{ range $monthPages.Pages }}
+            <li>
+              <time class="archive-date">{{ .Date.Format "2 Jan" }}</time>
+              <a class="archive-link" href="{{ .Permalink }}">{{ .Title }}</a>
+            </li>
           {{ end }}
-        {{ end }}
-      </p>
-
-      <!-- Wrap the summary HTML so “Read more” is definitely outside it -->
-      {{ with .Summary }}
-      <div class="home-post-content">
-        {{ . | safeHTML }}
-      </div>
+        </ul>
       {{ end }}
-
-      <a class="read-more" href="{{ .Permalink }}">Read more →</a>
-    </article>
     {{ end }}
   </div>
 
