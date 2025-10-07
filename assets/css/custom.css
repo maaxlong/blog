@@ -601,3 +601,21 @@ header .main-nav a:focus {
 .post-summary:last-child {
   border-bottom: 1px solid var(--hr, #e5dada) !important;
 }
+
+/* === RSS link styling === */
+.rss-link {
+  color: #f26522;               /* classic orange */
+  margin-left: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.rss-link:hover {
+  opacity: 0.75;
+}
+
+.rss-link svg {
+  fill: currentColor;
+}
