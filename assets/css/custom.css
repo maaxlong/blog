@@ -634,5 +634,5 @@ blockquote,
 .main-article .content blockquote,
 .content-with-sidebar .main-content article.post-summary .home-post-content blockquote {
   margin-inline-start: 1rem !important;
-  padding: 0 !important;
+  padding: 0rem 1rem !important;
 }
