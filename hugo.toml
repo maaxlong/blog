@@ -29,6 +29,8 @@ canonifyURLs = true  # ADD THIS LINE
   
   # Custom CSS
   customCSS = ["css/custom.css"]
+  
+  summaryLength = 250
 
 # Main menu
 [[menu.main]]
