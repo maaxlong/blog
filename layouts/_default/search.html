@@ -1,0 +1,100 @@
+{{ define "main" }}
+<h1>Search</h1>
+
+<div id="search">
+  <input 
+    id="search-input" 
+    type="search" 
+    placeholder="Search posts..." 
+    aria-label="Search"
+    autocomplete="off"
+  >
+  <div id="search-results"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.6.2/fuse.min.js"></script>
+<script>
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      const fuse = new Fuse(data, {
+        keys: ['title', 'content', 'tags'],
+        threshold: 0.4,
+        includeScore: true,
+        minMatchCharLength: 2
+      });
+
+      searchInput.addEventListener('input', function(e) {
+        const query = e.target.value.trim();
+        
+        if (query.length < 2) {
+          searchResults.innerHTML = '';
+          return;
+        }
+
+        const results = fuse.search(query);
+        
+        if (results.length === 0) {
+          searchResults.innerHTML = '<p>No results found.</p>';
+          return;
+        }
+
+        const html = results.slice(0, 20).map(result => {
+          const item = result.item;
+          return `
+            <article class="search-result">
+              <h2><a href="${item.permalink}">${item.title}</a></h2>
+              <p class="post-meta">${new Date(item.date).toLocaleDateString()}</p>
+              ${item.summary ? `<p>${item.summary}</p>` : ''}
+            </article>
+          `;
+        }).join('');
+
+        searchResults.innerHTML = html;
+      });
+    });
+</script>
+
+<style>
+#search {
+  margin-top: 2rem;
+}
+
+#search-input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 2px solid var(--border, #ddd);
+  border-radius: 4px;
+  background: var(--bg, #fff);
+  color: var(--text, #000);
+}
+
+#search-input:focus {
+  outline: none;
+  border-color: var(--accent, #0066cc);
+}
+
+#search-results {
+  margin-top: 2rem;
+}
+
+.search-result {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border, #eee);
+}
+
+.search-result:last-child {
+  border-bottom: none;
+}
+
+.search-result h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+</style>
+{{ end }}

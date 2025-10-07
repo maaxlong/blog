@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Max Long&#39;s Blog</title>
+    <link>http://localhost:1313/tags/uk_higher_ed/</link>
+    <description>Recent content on Max Long&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>your@email.com (Max Long)</managingEditor>
+    <webMaster>your@email.com (Max Long)</webMaster>
+    <lastBuildDate>Mon, 06 Oct 2025 23:16:49 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/uk_higher_ed/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>new file testing</title>
+      <link>http://localhost:1313/posts/2025-10-06-new-file-testing/</link>
+      <pubDate>Mon, 06 Oct 2025 23:16:49 +0000</pubDate><author>your@email.com (Max Long)</author>
+      <guid>http://localhost:1313/posts/2025-10-06-new-file-testing/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;this seems to me like a wonderful opportunity to test whether this actually works on this website&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Max Long, &lt;a href=&#34;www.google.com&#34;&gt;speaking to the media&lt;/a&gt;.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<blockquote>
+<p>this seems to me like a wonderful opportunity to test whether this actually works on this website</p></blockquote>
+<p>Max Long, <a href="www.google.com">speaking to the media</a>.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<aside class="sidebar">
+  <section>
+  <h3>Recent Posts</h3>
+  <ul>
+    {{ range first 5 (where .Site.RegularPages "Type" "posts") }}
+    <li>
+      {{ $title := cond (ne .Title "") .Title (.Date.Format "Jan 2, 2006") }}
+      <a href="{{ .Permalink }}">{{ $title }}</a><br>
+      <small>{{ .Date.Format "Jan 2, 2006" }}</small>
+    </li>
+    {{ end }}
+  </ul>
+</section>
+
+  <section>
+    <h3>Tags</h3>
+    {{ $tags := slice }}
+    {{ range $name, $taxonomy := site.Taxonomies.tags }}
+      {{ $tags = $tags | append $name }}
+    {{ end }}
+    {{ range $index, $name := $tags }}
+      {{ if $index }}, {{ end }}
+      <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}/">{{ $name }}</a>
+    {{ end }}
+  </section>
+</aside>

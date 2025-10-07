@@ -1,0 +1,23 @@
+{{ define "main" }}
+<h1>All Tags</h1>
+
+<div class="tag-list">
+  {{/* Build an array of {name, count, url} from the tags taxonomy */}}
+  {{ $tags := slice }}
+  {{ range $name, $pages := site.Taxonomies.tags }}
+    {{ $tags = $tags | append (dict
+      "name"  $name
+      "count" (len $pages)
+      "url"   (printf "%s%s/" ("/tags/" | relLangURL) ($name | urlize))
+    ) }}
+  {{ end }}
+
+  {{/* Sort by count (descending) and render */}}
+  {{ range sort $tags "count" "desc" }}
+    <p>
+      <a href="{{ .url }}">#{{ .name }}</a>
+      <span>({{ .count }})</span>
+    </p>
+  {{ end }}
+</div>
+{{ end }}

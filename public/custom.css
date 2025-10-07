@@ -1,0 +1,171 @@
+/* Two-column layout for pages with sidebar */
+.content-with-sidebar,
+main > div:has(.sidebar) {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .content-with-sidebar,
+  main > div:has(.sidebar) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Ensure main content doesn't overflow */
+.main-article,
+main > article {
+  min-width: 0;
+}
+
+/* Sidebar styles */
+.sidebar {
+  background: var(--bg-alt, #f5f5f5);
+  padding: 1.5rem;
+  border-radius: 8px;
+  position: sticky;
+  top: 1rem;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+}
+
+.sidebar section {
+  margin-bottom: 2rem;
+}
+
+.sidebar section:last-child {
+  margin-bottom: 0;
+}
+
+.sidebar h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.1em;
+  border-bottom: 2px solid var(--border, #ddd);
+  padding-bottom: 0.5rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border, #eee);
+}
+
+.sidebar li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.sidebar li a {
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.sidebar small {
+  color: var(--text-muted, #666);
+  font-size: 0.85em;
+}
+
+/* Tag list in sidebar */
+.sidebar .tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.sidebar .tag-list a {
+  display: inline-block;
+  background: var(--accent-bg, #e8f5e9);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.sidebar .tag-list a:hover {
+  background: var(--accent, #c8e6c9);
+}
+
+/* Post footer tags */
+.post-footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--border, #ddd);
+}
+
+.post-footer .tags a {
+  display: inline-block;
+  background: var(--accent-bg, #e8f5e9);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.post-footer .tags a:hover {
+  background: var(--accent, #c8e6c9);
+}
+
+/* Link posts */
+.link-post {
+  background: var(--accent-bg, #fffbdd);
+  border-left: 4px solid var(--accent, #ffd700);
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 4px;
+}
+
+.link-post a {
+  word-break: break-all;
+  font-weight: 600;
+}
+
+/* Post summaries */
+.post-summary {
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--border, #ddd);
+}
+
+.post-summary:last-child {
+  border-bottom: none;
+}
+
+.post-summary h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.post-meta {
+  color: var(--text-muted, #666);
+  font-size: 0.9em;
+  margin-bottom: 1rem;
+}
+
+/* Tag list page */
+.tag-list p {
+  margin-bottom: 0.5rem;
+}
+
+.tag-list span {
+  color: var(--text-muted, #666);
+  font-size: 0.9em;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .sidebar {
+    background: var(--bg-alt, #2d2d2d);
+  }
+}

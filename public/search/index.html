@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Search&nbsp;|&nbsp;Max Long&#39;s Blog</title>
+<meta
+  name="title"
+  content="Search"
+/>
+<meta
+  name="description"
+  content=""
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+
+  <meta name="author" content="Max Long" />
+
+
+
+
+<meta property="og:url" content="http://localhost:1313/search/">
+  <meta property="og:site_name" content="Max Long&#39;s Blog">
+  <meta property="og:title" content="Search">
+  <meta property="og:description" content="Max Long&#39;s Blog&#39;">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Search">
+  <meta name="twitter:description" content="Max Long&#39;s Blog&#39;">
+
+
+
+
+
+  <meta itemprop="name" content="Search">
+  <meta itemprop="description" content="Max Long&#39;s Blog&#39;">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+    
+    
+    
+    <link href="/bundle.min.css" rel="stylesheet" />
+
+    
+
+    
+
+
+    
+<link rel="stylesheet" href="/css/custom.min.950db790fe532042f49486a1c04615c6e9bfa8ef6f24a11800f49f07e2320529.css" integrity="sha256-lQ23kP5TIEL0lIahwEYVxum/qO9vJKEYAPSfB&#43;IyBSk="></head>
+
+  <body>
+    <header>
+      <header>
+  <h1 class="site-title">
+    <a href="http://localhost:1313/">Max Long&#39;s Blog</a>
+  </h1>
+
+  
+  <div class="site-avatar">
+    <img src="/images/main_image.jpeg" alt="Profile photo of Max Long&#39;s Blog">
+  </div>
+
+  <nav class="main-nav">
+    
+      <a href="/">Home</a>
+    
+      <a href="/posts/">Posts</a>
+    
+      <a href="/tags/">Tags</a>
+    
+      <a href="/search/">Search</a>
+    
+  </nav>
+</header>
+    </header>
+    <main>
+      
+<h1>Search</h1>
+
+<div id="search">
+  <input 
+    id="search-input" 
+    type="search" 
+    placeholder="Search posts..." 
+    aria-label="Search"
+    autocomplete="off"
+  >
+  <div id="search-results"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.6.2/fuse.min.js"></script>
+<script>
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      const fuse = new Fuse(data, {
+        keys: ['title', 'content', 'tags'],
+        threshold: 0.4,
+        includeScore: true,
+        minMatchCharLength: 2
+      });
+
+      searchInput.addEventListener('input', function(e) {
+        const query = e.target.value.trim();
+        
+        if (query.length < 2) {
+          searchResults.innerHTML = '';
+          return;
+        }
+
+        const results = fuse.search(query);
+        
+        if (results.length === 0) {
+          searchResults.innerHTML = '<p>No results found.</p>';
+          return;
+        }
+
+        const html = results.slice(0, 20).map(result => {
+          const item = result.item;
+          return `
+            <article class="search-result">
+              <h2><a href="${item.permalink}">${item.title}</a></h2>
+              <p class="post-meta">${new Date(item.date).toLocaleDateString()}</p>
+              ${item.summary ? `<p>${item.summary}</p>` : ''}
+            </article>
+          `;
+        }).join('');
+
+        searchResults.innerHTML = html;
+      });
+    });
+</script>
+
+<style>
+#search {
+  margin-top: 2rem;
+}
+
+#search-input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 2px solid var(--border, #ddd);
+  border-radius: 4px;
+  background: var(--bg, #fff);
+  color: var(--text, #000);
+}
+
+#search-input:focus {
+  outline: none;
+  border-color: var(--accent, #0066cc);
+}
+
+#search-results {
+  margin-top: 2rem;
+}
+
+.search-result {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border, #eee);
+}
+
+.search-result:last-child {
+  border-bottom: none;
+}
+
+.search-result h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+</style>
+
+    </main>
+    <footer>
+      
+
+      
+
+  <span>
+    
+    Made with
+    <a href="https://github.com/maolonglong/hugo-simple/">Hugo ʕ•ᴥ•ʔ Simple</a>
+  </span>
+
+
+    </footer>
+
+    
+</body>
+</html>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Max Long&#39;s Blog</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Max Long&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>your@email.com (Max Long)</managingEditor>
+    <webMaster>your@email.com (Max Long)</webMaster>
+    <lastBuildDate>Tue, 07 Oct 2025 00:17:09 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Value and Provision of History and the Humanities</title>
+      <link>http://localhost:1313/posts/2025-10-07-the-value-and-provision-of-history-and-the-humanities/</link>
+      <pubDate>Tue, 07 Oct 2025 00:17:09 +0000</pubDate><author>your@email.com (Max Long)</author>
+      <guid>http://localhost:1313/posts/2025-10-07-the-value-and-provision-of-history-and-the-humanities/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;If, as the Education Secretary claimed this week, the government is serious about choice, social mobility and access to education it needs to appreciate that the provision of local universities and courses is now at considerable risk given the financial turmoil affecting UK higher education. What’s clear is that our current situation and trajectory is not a route to greater choice and accessibility. Rather, it is a potential channelling of resources and students into an ever narrowing range of options deemed by policy makers as being in the country’s best interests for the future. (&lt;a href=&#34;https://blog.royalhistsoc.org/2025/10/02/the-value-and-provision-of-history-and-the-humanities-its-time-for-a-political-response/&#34;&gt;via the RHS blog&lt;/a&gt;)&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<blockquote>
+<p>If, as the Education Secretary claimed this week, the government is serious about choice, social mobility and access to education it needs to appreciate that the provision of local universities and courses is now at considerable risk given the financial turmoil affecting UK higher education. What’s clear is that our current situation and trajectory is not a route to greater choice and accessibility. Rather, it is a potential channelling of resources and students into an ever narrowing range of options deemed by policy makers as being in the country’s best interests for the future. (<a href="https://blog.royalhistsoc.org/2025/10/02/the-value-and-provision-of-history-and-the-humanities-its-time-for-a-political-response/">via the RHS blog</a>)</p></blockquote>
+<p>Lucy Noakes, President of the Royal Historical Society, on ‘The Value and Provision of History and the Humanities’</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>GenAI at Oxford</title>
+      <link>http://localhost:1313/posts/genai-at-oxford/</link>
+      <pubDate>Sun, 05 Oct 2025 00:00:00 +0000</pubDate><author>your@email.com (Max Long)</author>
+      <guid>http://localhost:1313/posts/genai-at-oxford/</guid>
+      <description>&lt;p&gt;The University of Oxford have recently published new guidance on the use of &lt;a href=&#34;https://www.ox.ac.uk/research/support-researchers/research-practice/policy-generative-ai-research&#34;&gt;Generative AI in Research&lt;/a&gt;, as well as new policies on the use of &lt;a href=&#34;https://academic.admin.ox.ac.uk/ai-use-in-summative-assessment&#34;&gt;GenAI in summative assessments&lt;/a&gt;. The university has also published guidance on the &lt;a href=&#34;https://www.ox.ac.uk/students/life/it/guidance-safe-and-responsible-use-gen-ai-tools&#34;&gt;safe and responsible use of GenAI tools&lt;/a&gt;. This follows a &lt;a href=&#34;https://www.ox.ac.uk/news/2025-09-19-oxford-becomes-first-uk-university-offer-chatgpt-edu-all-staff-and-students&#34;&gt;recent deal between the University and OpenAI&lt;/a&gt;, which will see ChatGPT Edu made available to all users in the university.&lt;/p&gt;
+&lt;p&gt;Much of this is very informative, and it feels like a positive step to have clearly articulated policies on the use of GenAI in a university context, especially one which lays out guidance for both students and researchers. However, as with any blanket set of policies and recommendations, there still remain questions as to how these will apply within the context of individual subjects and fields, and how the use of specific tools and methods should be reported, registered, and cited. This is particularly the case in many fields, including History, where registering the declaring the use of specific tools and data associated has not been common practice in the past, except in the case of digital humanities specialists.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>The University of Oxford have recently published new guidance on the use of <a href="https://www.ox.ac.uk/research/support-researchers/research-practice/policy-generative-ai-research">Generative AI in Research</a>, as well as new policies on the use of <a href="https://academic.admin.ox.ac.uk/ai-use-in-summative-assessment">GenAI in summative assessments</a>. The university has also published guidance on the <a href="https://www.ox.ac.uk/students/life/it/guidance-safe-and-responsible-use-gen-ai-tools">safe and responsible use of GenAI tools</a>. This follows a <a href="https://www.ox.ac.uk/news/2025-09-19-oxford-becomes-first-uk-university-offer-chatgpt-edu-all-staff-and-students">recent deal between the University and OpenAI</a>, which will see ChatGPT Edu made available to all users in the university.</p>
+<p>Much of this is very informative, and it feels like a positive step to have clearly articulated policies on the use of GenAI in a university context, especially one which lays out guidance for both students and researchers. However, as with any blanket set of policies and recommendations, there still remain questions as to how these will apply within the context of individual subjects and fields, and how the use of specific tools and methods should be reported, registered, and cited. This is particularly the case in many fields, including History, where registering the declaring the use of specific tools and data associated has not been common practice in the past, except in the case of digital humanities specialists.</p>
+<p>The policies introduce a key distinction between what the university terms <strong>substantive use</strong>, including the use of GenAI to “interpret and analyse data”, “formulate research aims”, “identify research gaps”, or to produce transcriptions of interviews (interestingly OCR is not mentioned). There are a few exclusions, mostly relating to the use of AI to overcome language and accessibility barriers.</p>
+<p>This substantive use of individual GenAI tools is treated separately from applications “where GenAI is a functionality in existing software”, a distinction which is likely to become blurred very quickly, especially as GenAI becomes embedded in everyday software. It’ll be interesting to see if this is revised in the coming months and years. It’s good to see the University encouraging researchers to be clearer about documenting their use of GenAI tools and being transparent about this, but I wonder whether more casual users of the technology can really be expected to systematically record their ocasional interactions with AI chatbots, especially if they don’t consider these to be instrumental to their research process.</p>
+<p>The policies also contain reminders about the environmental impact of GenAI, and suggest that researches seek out smaller models that can be run locally. This was one of our principal recommendations on the <a href="https://sas-dhrh.github.io/dhcc-toolkit/toolkit/case-studies.html#case-study-4-congruence-engine---raising-environmental-awareness-in-an-interdisciplinary-research-project">Congruence Engine</a> project last year. Currently this seems like something that only digital humanities folks will be taking up with any degree of seriousness, but I’ll keep an eye out for any university-wide initiatives that encourage researchers to ditch the chatbots in favour of local, task-specific models.</p>
+<p>Finally, while chat data for users of ChatGPT Edu will remain private to all users, it seems likely that in some cases prompts and responses will be liable to FOI requests, assuming these are logged in the system and the University retains access to them. Identifying information will of course be subject to FOI exemptions, but I’d be curious to know what kinds of data such FOI requests could result in further down the line.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/another-post/</link>
+      <pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate><author>your@email.com (Max Long)</author>
+      <guid>http://localhost:1313/posts/another-post/</guid>
+      <description>&lt;p&gt;This weekend we celebrated the career of Prof. Peter Mandler with a book launch and a conference featuring contributions from friends and colleagues across his career. The book, entitled Democratising History: Modern British History Inside and Out, is edited by Freddy Foks, Laura Carter, and Philip Harling. The introduction, by Laura and Freddy, is a particularly rich contribution to the field, outlining a rough genealogy for the concept of ‘democratisation’, which has so far received surprisingly little detailed attention by historians of Britain. The book is &lt;a href=&#34;https://uolpress.co.uk/book/democratising-history/&#34;&gt;available to download&lt;/a&gt; for free now!&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>This weekend we celebrated the career of Prof. Peter Mandler with a book launch and a conference featuring contributions from friends and colleagues across his career. The book, entitled Democratising History: Modern British History Inside and Out, is edited by Freddy Foks, Laura Carter, and Philip Harling. The introduction, by Laura and Freddy, is a particularly rich contribution to the field, outlining a rough genealogy for the concept of ‘democratisation’, which has so far received surprisingly little detailed attention by historians of Britain. The book is <a href="https://uolpress.co.uk/book/democratising-history/">available to download</a> for free now!</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Search</title>
+      <link>http://localhost:1313/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>your@email.com (Max Long)</author>
+      <guid>http://localhost:1313/search/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+  </channel>
+</rss>

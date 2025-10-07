@@ -1,0 +1,56 @@
+baseURL = "https://maaxlong.github.io/"
+languageCode = "en-us"
+title = "Max Long's Blog"
+theme = "hugo-simple"
+
+# Pagination (new format)
+[pagination]
+  pagerSize = 10
+
+# Enable taxonomies
+[taxonomies]
+  tag = "tags"
+
+[params]
+  # Site description
+  description = "Max Long's Blog'"
+  
+  # Author info (must be an object for hugo-simple theme)
+  [params.author]
+    name = "Max Long"
+    email = "your@email.com"
+  
+  # Show dark mode toggle
+  darkModeToggle = true
+  
+  # Number of recent posts to show
+  recentPostsLimit = 10
+  
+  # Custom CSS
+  customCSS = ["css/custom.css"]
+
+# Main menu
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "Posts"
+  url = "/posts/"
+  weight = 2
+
+[[menu.main]]
+  name = "Tags"
+  url = "/tags/"
+  weight = 3
+
+[[menu.main]]
+  name = "Search"
+  url = "/search/"
+  weight = 4
+
+# Output formats for search
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  

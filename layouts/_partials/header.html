@@ -1,0 +1,16 @@
+<header>
+  <h1 class="site-title">
+    <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+  </h1>
+
+  <!-- Profile image below title -->
+  <div class="site-avatar">
+    <img src="/images/main_image.jpeg" alt="Profile photo of {{ .Site.Title }}">
+  </div>
+
+  <nav class="main-nav">
+    {{ range .Site.Menus.main }}
+      <a href="{{ .URL }}">{{ .Name }}</a>
+    {{ end }}
+  </nav>
+</header>

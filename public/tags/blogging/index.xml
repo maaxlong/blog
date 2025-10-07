@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Max Long&#39;s Blog</title>
+    <link>http://localhost:1313/tags/blogging/</link>
+    <description>Recent content on Max Long&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>your@email.com (Max Long)</managingEditor>
+    <webMaster>your@email.com (Max Long)</webMaster>
+    <lastBuildDate>Fri, 03 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/blogging/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My First Post</title>
+      <link>http://localhost:1313/posts/my-first-post/</link>
+      <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate><author>your@email.com (Max Long)</author>
+      <guid>http://localhost:1313/posts/my-first-post/</guid>
+      <description>&lt;p&gt;This is the content of my first post. The hugo-simple theme provides a clean, readable design perfect for text-focused content.&lt;/p&gt;
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Clean typography&lt;/li&gt;
+&lt;li&gt;Dark mode support&lt;/li&gt;
+&lt;li&gt;Fast loading (no JavaScript)&lt;/li&gt;
+&lt;li&gt;SEO friendly&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Write naturally in Markdown and the theme handles the rest.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>This is the content of my first post. The hugo-simple theme provides a clean, readable design perfect for text-focused content.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Clean typography</li>
+<li>Dark mode support</li>
+<li>Fast loading (no JavaScript)</li>
+<li>SEO friendly</li>
+</ul>
+<p>Write naturally in Markdown and the theme handles the rest.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/another-post/</link>
+      <pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate><author>your@email.com (Max Long)</author>
+      <guid>http://localhost:1313/posts/another-post/</guid>
+      <description>&lt;p&gt;This weekend we celebrated the career of Prof. Peter Mandler with a book launch and a conference featuring contributions from friends and colleagues across his career. The book, entitled Democratising History: Modern British History Inside and Out, is edited by Freddy Foks, Laura Carter, and Philip Harling. The introduction, by Laura and Freddy, is a particularly rich contribution to the field, outlining a rough genealogy for the concept of ‘democratisation’, which has so far received surprisingly little detailed attention by historians of Britain. The book is &lt;a href=&#34;https://uolpress.co.uk/book/democratising-history/&#34;&gt;available to download&lt;/a&gt; for free now!&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>This weekend we celebrated the career of Prof. Peter Mandler with a book launch and a conference featuring contributions from friends and colleagues across his career. The book, entitled Democratising History: Modern British History Inside and Out, is edited by Freddy Foks, Laura Carter, and Philip Harling. The introduction, by Laura and Freddy, is a particularly rich contribution to the field, outlining a rough genealogy for the concept of ‘democratisation’, which has so far received surprisingly little detailed attention by historians of Britain. The book is <a href="https://uolpress.co.uk/book/democratising-history/">available to download</a> for free now!</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

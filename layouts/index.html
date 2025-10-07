@@ -1,0 +1,31 @@
+{{ define "main" }}
+<div class="content-with-sidebar">
+  <div class="main-content">
+
+    {{ $posts := where site.RegularPages "Type" "posts" }}
+    {{ range first 10 $posts }}
+    <article class="post-summary">
+      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+
+      <p class="post-meta">
+        <time>{{ .Date.Format "January 2, 2006" }}</time>
+        {{ if .Params.tags }}
+          &nbsp;·&nbsp;
+          {{ range $i, $tag := .Params.tags }}
+            {{ if $i }}, {{ end }}
+            <a class="tag-link-inline" href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}/">#{{ $tag }}</a>
+          {{ end }}
+        {{ end }}
+      </p>
+
+      <div class="home-post-content">
+        {{ .Content }}
+      </div>
+    </article>
+    {{ end }}
+
+  </div>
+
+  {{ partial "sidebar.html" . }}
+</div>
+{{ end }}
