@@ -1,37 +1,27 @@
 {{ define "main" }}
 <div class="content-with-sidebar">
-  <article class="main-article">
-    <header>
-      <h1>{{ .Title }}</h1>
-      <p>
-        <time datetime="{{ .Date.Format "2006-01-02" }}">
-          {{ .Date.Format "January 2, 2006" }}
-        </time>
-      </p>
-    </header>
+  <div class="main-content">
+    <article class="post-summary h-entry">
+      <header class="post-header">
+        <h1 class="p-name">{{ .Title }}</h1>
 
-    {{ if .Params.link }}
-    <aside class="link-post">
-      <p><strong>→</strong> <a href="{{ .Params.link }}" target="_blank" rel="noopener">{{ .Params.link }}</a></p>
-    </aside>
-    {{ end }}
+        <div class="post-meta meta">
+          <time class="dt-published" datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time>
+          {{ with .Params.tags }}
+            &nbsp;·&nbsp;
+            {{ $n := sub (len .) 1 }}
+            {{ range $i, $tag := . }}
+              <a class="tag" href="{{ (printf "tags/%s/" (urlize $tag)) | relLangURL }}">#{{ $tag }}</a>{{ if lt $i $n }}, {{ end }}
+            {{ end }}
+          {{ end }}
+        </div>
+      </header>
 
-    <div class="content">
-      {{ .Content }}
-    </div>
-
-    <footer class="post-footer">
-      {{ if .Params.tags }}
-      <div class="tags">
-        <strong>Tagged:</strong>
-        {{ range $index, $tag := .Params.tags }}
-          {{ if $index }}, {{ end }}
-          <a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}/">#{{ $tag }}</a>
-        {{ end }}
+      <div class="post-content e-content">
+        {{ .Content }}
       </div>
-      {{ end }}
-    </footer>
-  </article>
+    </article>
+  </div>
 
   {{ partial "sidebar.html" . }}
 </div>

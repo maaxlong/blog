@@ -421,7 +421,6 @@ header .main-nav a:focus {
   margin-bottom: 0; /* remove extra gap at end of quote */
 }
 
-
 /* Nuke top margins on paragraphs inside our articles */
 .content-with-sidebar .main-content article.post-summary .home-post-content p,
 .main-article .content p,
@@ -464,6 +463,55 @@ header .main-nav a:focus {
 /* don't add extra space after the last element inside a post */
 .home-post-content > *:last-child {
   margin-bottom: 0 !important;
+}
+
+
+/* Make single-post view match homepage card layout */
+.post-summary {
+  border-radius: 12px;
+  border: 1px solid var(--hr, #e5dada);
+  background: var(--card-bg, #fff);
+}
+
+.post-header,
+.post-header h1,
+.post-meta {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.post-header h1 {
+  margin: 0 0 0.35rem 0;
+  line-height: 1.25;
+}
+
+.post-meta {
+  color: #777;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.post-meta a.tag {
+  text-decoration: none;
+}
+
+/* Ensure tags/date sit above body and the body doesn’t indent */
+.post-content {
+  margin-top: 0.75rem;
+  padding: 0;
+}
+
+/* Mobile alignment stays flush with title/meta */
+@media (max-width: 768px) {
+  .post-summary,
+  .post-header,
+  .post-content,
+  .post-meta {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    text-align: left !important;
+  }
 }
 
 @media (max-width: 768px) {
