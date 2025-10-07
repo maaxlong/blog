@@ -3,17 +3,29 @@
   <div class="main-content">
     <h1 class="archive-title">Archive</h1>
 
-    {{/* Group posts by year, then month */}}
-    {{ range $year, $yearPages := .Pages.GroupByDate "2006" }}
-      <h2 class="archive-year">{{ $year }}</h2>
+    {{/* Collect posts; use both 'post' and 'posts' sections */}}
+    {{ $pages := where site.RegularPages "Section" "in" (slice "post" "posts") }}
 
-      {{ range $month, $monthPages := $yearPages.Pages.GroupByDate "January" }}
-        <h3 class="archive-month">{{ $month }}</h3>
+    {{/* Group by YEAR (newest first) */}}
+    {{ range $year := ($pages.GroupByDate "2006").Reverse }}
+      <h2 class="archive-year">{{ $year.Key }}</h2>
+
+      {{/* Within each year, group by MONTH (newest first) */}}
+      {{ range $month := ($year.Pages.GroupByDate "January").Reverse }}
+        <h3 class="archive-month">{{ $month.Key }}</h3>
         <ul class="archive-list">
-          {{ range $monthPages.Pages }}
+          {{ range $post := ($month.Pages.ByDate.Reverse) }}
+            {{/* Ordinal day: 1st, 2nd, 3rd, 4th... */}}
+            {{ $day := int ($post.Date | time.Format "2") }}
+            {{ $suffix := "th" }}
+            {{ if or (eq $day 1) (eq $day 21) (eq $day 31) }}{{ $suffix = "st" }}{{ end }}
+            {{ if or (eq $day 2) (eq $day 22) }}{{ $suffix = "nd" }}{{ end }}
+            {{ if or (eq $day 3) (eq $day 23) }}{{ $suffix = "rd" }}{{ end }}
+
             <li>
-              <time class="archive-date">{{ .Date.Format "2 Jan" }}</time>
-              <a class="archive-link" href="{{ .Permalink }}">{{ .Title }}</a>
+              <span class="archive-day">{{ printf "%d%s" $day $suffix }}</span>
+              &nbsp;–&nbsp;
+              <a class="archive-link" href="{{ $post.Permalink }}">{{ $post.Title }}</a>
             </li>
           {{ end }}
         </ul>
