@@ -679,3 +679,47 @@ blockquote,
   text-decoration: none;
 }
 .post-summary .read-more:hover { text-decoration: underline; }
+
+/* Archive page heading sizes */
+.archive-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.archive-year {
+  font-size: 1.4rem;    /* smaller than main title */
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 0.25rem;
+  color: #333;
+}
+
+.archive-month {
+  font-size: 1.15rem;   /* slightly smaller than year */
+  font-weight: 600;
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+  color: #555;
+}
+
+.archive-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.archive-list li {
+  margin: 0.3rem 0;
+}
+
+.archive-day {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.archive-link {
+  text-decoration: none;
+}
+
+.archive-link:hover {
+  text-decoration: underline;
+}
