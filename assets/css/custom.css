@@ -480,7 +480,7 @@ header .main-nav a:focus {
     width: 100% !important;       /* avoids overflow from 100vw */
     max-width: 100% !important;
     margin: 0 auto !important;    /* centers if needed */
-    padding: 0 1rem !important;   /* equal left/right gutter */
+    padding: 0 0.5rem !important;   /* equal left/right gutter */
     box-sizing: border-box;
   }
 
@@ -508,7 +508,34 @@ header .main-nav a:focus {
   .home-post-content {
     width: 100% !important;
     max-width: 100% !important;
-    padding: 1rem !important;   /* consistent inner text padding */
+    padding: 0.75rem !important;   /* consistent inner text padding */
     box-sizing: border-box !important;
+  }
+  
+    /* Smaller text on mobile */
+  body {
+    font-size: 15px !important;  /* Base size reduction */
+  }
+
+  h1 {
+    font-size: 1.6rem !important;
+  }
+
+  h2 {
+    font-size: 1.3rem !important;
+  }
+
+  .post-summary h2 {
+    font-size: 1.25rem !important;
+  }
+
+  p, .home-post-content {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
   }
 }
