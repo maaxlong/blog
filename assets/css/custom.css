@@ -467,6 +467,13 @@ header .main-nav a:focus {
 }
 
 @media (max-width: 768px) {
+  /* Reset default margins and avoid horizontal scroll */
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+  }
+
   /* Hide sidebar */
   .sidebar,
   aside,
@@ -474,70 +481,58 @@ header .main-nav a:focus {
     display: none !important;
   }
 
-  /* Let main content span full viewport width */
+  /* Single-column layout with no outer gutters on the wrapper */
   .content-with-sidebar {
     display: block !important;
     grid-template-columns: 1fr !important;
-    width: 100vw !important;        /* Use full viewport width */
-    max-width: 100vw !important;
-    margin: 0 !important;           /* Remove outer margins */
-    padding: 0 !important;          /* Remove outer padding */
-  }
-
-  /* Ensure inner content fills and centers properly */
-  .content-with-sidebar > .main-content,
-  .content-with-sidebar > .main-article {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    margin: 0 auto !important;
-    padding: 0 1rem !important;   /* add inner gutter */
-  }
-
-  main {
-    padding: 0 !important;
-    width: 100vw !important;
-    max-width: 100vw !important;
-  }
-
-  body {
+    width: 100% !important;        /* avoid 100vw on iOS */
+    max-width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
+    box-sizing: border-box !important;
   }
 
-  /* Ensure article and post content is full width but readable */
+  /* Main content spans full width, centered, with symmetric safe-area gutters */
+  .content-with-sidebar > .main-content,
+  .content-with-sidebar > .main-article,
+  main {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    /* Even left/right padding, respecting iOS notches/edges */
+    padding-left: max(12px, env(safe-area-inset-left)) !important;
+    padding-right: max(12px, env(safe-area-inset-right)) !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+
+    box-sizing: border-box !important;
+  }
+
+  /* Post cards fill the available width but keep comfortable inner padding */
   article,
   .post-summary,
   .home-post-content {
     width: 100% !important;
     max-width: 100% !important;
-    padding: 1rem !important;   /* inner text padding */
+    padding: 1rem !important;          /* inner text padding */
     box-sizing: border-box !important;
   }
 
-  /* Smaller text on mobile */
-  body {
-    font-size: 15px !important;  /* Base size reduction */
+  /* Optional: remove any stray container max-widths on mobile */
+  .content,
+  .container,
+  .wrap {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  h1 {
-    font-size: 1.6rem !important;
-  }
-
-  h2 {
-    font-size: 1.3rem !important;
-  }
-
-  .post-summary h2 {
-    font-size: 1.25rem !important;
-  }
-
-  p, .home-post-content {
-    font-size: 0.95rem !important;
-    line-height: 1.5 !important;
-  }
-
-  html, body {
-    margin: 0;
-    padding: 0;
-  }
+  /* Type tweaks */
+  body { font-size: 15px !important; }
+  h1 { font-size: 1.6rem !important; }
+  h2 { font-size: 1.3rem !important; }
+  .post-summary h2 { font-size: 1.25rem !important; }
+  p, .home-post-content { font-size: 0.95rem !important; line-height: 1.5 !important; }
 }
