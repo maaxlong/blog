@@ -6,18 +6,26 @@
     {{ range .Pages }}
     <article class="post-summary">
       <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+
       <p class="post-meta">
         <time>{{ .Date | time.Format "2 January 2006, 3:04 pm" }}</time>
         {{ if .Params.tags }}
-        · Tags:
-        {{ range $i, $tag := .Params.tags }}
-          {{ if $i }}, {{ end }}
-          <a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}/">#{{ $tag }}</a>
-        {{ end }}
+          · Tags:
+          {{ range $i, $tag := .Params.tags }}
+            {{ if $i }}, {{ end }}
+            <a href="{{ "tags/" | relLangURL }}{{ $tag | urlize }}/">#{{ $tag }}</a>
+          {{ end }}
         {{ end }}
       </p>
-      {{ with .Summary }}<p>{{ . }}</p>{{ end }}
-      <a href="{{ .Permalink }}">Read more →</a>
+
+      <!-- Wrap the summary HTML so “Read more” is definitely outside it -->
+      {{ with .Summary }}
+      <div class="home-post-content">
+        {{ . | safeHTML }}
+      </div>
+      {{ end }}
+
+      <a class="read-more" href="{{ .Permalink }}">Read more →</a>
     </article>
     {{ end }}
   </div>

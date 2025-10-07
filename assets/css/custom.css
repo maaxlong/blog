@@ -636,3 +636,21 @@ blockquote,
   margin-inline-start: 1rem !important;
   padding: 0rem 1rem !important;
 }
+
+/* Keep a clear gap after any summary content (esp. when it ends with a blockquote) */
+.post-summary .home-post-content { margin-bottom: 0.75rem; }
+
+/* Ensure the “Read more” link never inherits quote styling */
+.post-summary .read-more {
+  display: inline-block;
+  margin-top: 0.25rem;     /* visual separation from summary */
+  padding-left: 0;         /* don’t indent like blockquotes */
+  border-left: none;       /* never show the quote bar */
+  text-decoration: none;
+  font-weight: 600;
+}
+.post-summary .read-more:hover { text-decoration: underline; }
+
+/* If a summary ends with a blockquote, add a bit more breathing room */
+.post-summary .home-post-content blockquote { margin-bottom: 0.75rem; }
+.post-summary .home-post-content blockquote + .read-more { margin-top: 0.5rem; }
