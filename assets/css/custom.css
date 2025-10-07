@@ -587,3 +587,59 @@ header .main-nav a:focus {
     padding: 0;
   }
 }
+
+/* ===== Fix: bottom of post box gets cut off ===== */
+
+/* Adjustable bottom space for the page */
+:root {
+  --page-bottom-space: 24px; /* tweak if you want more/less */
+}
+
+/* Give the main wrappers real bottom padding (prevents last-child margin collapse) */
+.content-with-sidebar,
+.main-content,
+main {
+  padding-bottom: var(--page-bottom-space);
+  box-sizing: border-box;
+  overflow-y: visible;   /* ensure nothing is visually clipped */
+  overflow-x: hidden;    /* keep mobile from scrolling sideways */
+}
+
+/* iOS safe-area friendly bottom padding */
+@supports (padding-bottom: calc(1px + env(safe-area-inset-bottom))) {
+  .content-with-sidebar,
+  .main-content,
+  main {
+    padding-bottom: calc(var(--page-bottom-space) + env(safe-area-inset-bottom));
+  }
+}
+
+/* Post “card” spacing + ensure rounded corners render fully */
+.post-summary,
+article.post-summary {
+  margin-bottom: 1.25rem;     /* space between cards */
+  border-radius: 12px;        /* if you’re using rounded corners */
+  overflow: visible;          /* don’t clip the rounded bottom edge */
+}
+
+/* No extra gap after the final card; container padding handles the breathing room */
+.post-summary:last-child,
+article.post-summary:last-child {
+  margin-bottom: 0;
+}
+
+/* Mobile keeps the same behaviour */
+@media (max-width: 768px) {
+  .content-with-sidebar,
+  .main-content,
+  main {
+    padding-bottom: var(--page-bottom-space);
+  }
+  @supports (padding-bottom: calc(1px + env(safe-area-inset-bottom))) {
+    .content-with-sidebar,
+    .main-content,
+    main {
+      padding-bottom: calc(var(--page-bottom-space) + env(safe-area-inset-bottom));
+    }
+  }
+}
