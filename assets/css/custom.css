@@ -241,7 +241,7 @@ main .sidebar {
 .main-article h1,
 .single h1,
 article h1 {
-  font-size: 1.8rem !important;  /* smaller than the default */
+  font-size: 1.4rem !important;  /* smaller than the default */
   line-height: 1.3;
 }
 
