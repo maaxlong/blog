@@ -1,18 +1,39 @@
 {{ define "main" }}
-<h1>Posts tagged: {{ .Title }}</h1>
+<div class="content-with-sidebar">
+  <div class="main-content">
+    <h1>{{ if .Data.Singular }}{{ .Data.Singular | title }}: {{ .Title }}{{ else }}{{ .Title }}{{ end }}</h1>
 
-{{ range .Pages }}
-<article class="post-summary">
-  <h2>
-    <a href="{{ .Permalink }}">{{ .Title }}</a>
-  </h2>
-  <p class="post-meta">
-    <time>{{ .Date.Format "January 2, 2006" }}</time>
-  </p>
-  {{ if .Summary }}
-  <p>{{ .Summary }}</p>
-  {{ end }}
-  <a href="{{ .Permalink }}">Read more →</a>
-</article>
-{{ end }}
+    {{/* Only show posts from post(s) sections, newest first, paginated */}}
+    {{ $posts := where .Pages "Section" "in" (slice "post" "posts") }}
+    {{ $p := .Paginate ($posts.ByDate.Reverse) }}
+    {{ range $p.Pages }}
+      <article class="post-summary h-entry">
+        <h2 class="p-name"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+
+        <p class="post-meta">
+          <time class="dt-published" datetime="{{ .Date }}">{{ .Date | time.Format "2 January 2006, 3:04 pm" }}</time>
+          {{ with .Params.tags }}
+            &nbsp;·&nbsp;Tags:
+            {{ range $i, $tag := . }}
+              {{ if $i }}, {{ end }}
+              <a class="tag" href="{{ (printf "tags/%s/" (urlize $tag)) | relLangURL }}">#{{ $tag }}</a>
+            {{ end }}
+          {{ end }}
+        </p>
+
+        {{ with .Summary }}
+          <div class="home-post-content">
+            {{ . | safeHTML }}
+          </div>
+        {{ end }}
+
+        <a class="read-more" href="{{ .Permalink }}">Read more →</a>
+      </article>
+    {{ end }}
+
+    {{ template "_internal/pagination.html" . }}
+  </div>
+
+  {{ partial "sidebar.html" . }}
+</div>
 {{ end }}
