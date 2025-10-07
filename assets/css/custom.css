@@ -342,8 +342,8 @@ header .main-nav a:focus {
 }
 
 .site-avatar img {
-  width: 170px;                  /* adjust to desired size */
-  height: 170px;
+  width: 160px;                  /* adjust to desired size */
+  height: 160px;
   border-radius: 50%;            /* makes it circular */
   object-fit: cover;             /* crops nicely */
   border: 3px solid var(--border);
@@ -351,10 +351,20 @@ header .main-nav a:focus {
   transition: transform 0.25s ease-in-out;
 }
 
-/* Optional hover zoom effect */
+/* Hover zoom effect */
 .site-avatar img:hover {
   transform: scale(1.05);
   border-color: var(--accent);
+}
+
+/* === Smaller avatar on mobile === */
+@media (max-width: 768px) {
+  .site-avatar img {
+    width: 100px;                /* reduced size on mobile */
+    height: 100px;
+    border-width: 2px;           /* slightly thinner border */
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  }
 }
 
 /* --- Post tags under homepage summaries --- */
