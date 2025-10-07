@@ -2,7 +2,7 @@
 title: The Value and Provision of History and the Humanities
 date: 2025-10-07T00:17:09.252Z
 preview: ""
-draft: true
+draft: false
 tags:
     - history
     - uk-higher-ed
