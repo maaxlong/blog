@@ -51,6 +51,8 @@ canonifyURLs = true  # ADD THIS LINE
   url = "/search/"
   weight = 4
 
+timeZone = "Europe/London"
+
 # Output formats for search
 [outputs]
   home = ["HTML", "RSS", "JSON"]
