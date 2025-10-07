@@ -5,12 +5,14 @@
 
   <!-- Profile image below title -->
   <div class="site-avatar">
-    <img src="/images/main_image.jpeg" alt="Profile photo of {{ .Site.Title }}">
+    <a href="{{ .Site.BaseURL }}" aria-label="Go to homepage">
+      <img src="{{ "images/main_image.jpeg" | relURL }}" alt="Profile photo of {{ .Site.Title }}">
+    </a>
   </div>
 
   <nav class="main-nav">
     {{ range .Site.Menus.main }}
-      <a href="{{ .URL }}">{{ .Name }}</a>
+      <a href="{{ .URL | relLangURL }}">{{ .Name }}</a>
     {{ end }}
   </nav>
 </header>
