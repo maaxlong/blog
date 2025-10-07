@@ -474,33 +474,38 @@ header .main-nav a:focus {
     display: none !important;
   }
   
-  /* Make content full width on mobile */
-  body {
-    padding: 0 1rem !important;
+  /* Force single column grid */
+  .content-with-sidebar {
+    display: block !important;  /* Change from grid to block */
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    padding-inline: 1rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
   
-  .container,
-  .content,
-  .main-content,
-  main,
-  article {
+  /* Make main content full width */
+  .content-with-sidebar > .main-content,
+  .content-with-sidebar > .main-article {
     width: 100% !important;
     max-width: 100% !important;
-    margin: 0 auto !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+    grid-column: 1 !important;
   }
   
-  /* Remove any flex or grid constraints */
-  .site-content,
-  .page-content,
-  .wrapper {
-    display: block !important;
+  main {
+    padding: 0 1rem !important;
     width: 100% !important;
   }
   
-  /* Make sure text isn't constrained */
-  p, h1, h2, h3, h4, h5, h6, ul, ol {
+  body {
+    padding: 0 !important;
+  }
+  
+  /* Ensure article and post content is full width */
+  article,
+  .post-summary,
+  .home-post-content {
+    width: 100% !important;
     max-width: 100% !important;
   }
 }
