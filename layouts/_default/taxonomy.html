@@ -1,9 +1,13 @@
 {{ define "main" }}
 <div class="content-with-sidebar">
   <div class="main-content">
-    <h1>
-      {{ if .Data.Singular }}{{ .Data.Singular | title }}: {{ .Title }}{{ else }}{{ .Title }}{{ end }}
-    </h1>
+    <h1 class="taxonomy-title">
+  {{ if .Data.Singular }}
+    {{ lower .Data.Singular }}: {{ lower .Title }}
+  {{ else }}
+    {{ lower .Title }}
+  {{ end }}
+	</h1>
 
     {{/* Only show posts from post(s) sections, newest first, paginated */}}
     {{ $posts := where .Pages "Section" "in" (slice "post" "posts") }}
