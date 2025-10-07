@@ -1,4 +1,4 @@
-baseURL = "https://maaxlong.github.io/"
+baseURL = "https://maaxlong.github.io/blog/"
 languageCode = "en-us"
 title = "Max Long's Blog"
 theme = "hugo-simple"
