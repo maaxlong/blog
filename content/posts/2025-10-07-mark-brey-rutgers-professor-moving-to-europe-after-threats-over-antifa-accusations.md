@@ -4,8 +4,9 @@ date: 2025-10-07T16:52:15.583Z
 preview: ""
 draft: false
 tags:
-    - universities
     - freedom-of-speech
+    - universities
+    - history
 ---
 > “I am not now, nor have I ever been, part of any kind of antifascist or anti-racist organization – I just haven’t. I’m a professor,” Bray said on Monday about the circumstances. Noting that antifa is a decentralized movement, he added: “I’m a professor of the history of the left.” (via [The Guardian](https://www.theguardian.com/us-news/2025/oct/07/rutgers-professor-turning-point-usa))
 
