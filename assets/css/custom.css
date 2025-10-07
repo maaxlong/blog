@@ -671,3 +671,11 @@ blockquote,
   font-weight: 700;
   pointer-events: none;
 }
+
+.post-summary .read-more {
+  display: inline-block;
+  margin-top: 0.25rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.post-summary .read-more:hover { text-decoration: underline; }

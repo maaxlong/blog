@@ -2,7 +2,7 @@
 <div class="content-with-sidebar">
   <div class="main-content">
 
-    {{/* Use the posts sections; grab the latest 10 */}}
+    {{/* Use posts (post/posts sections), newest first */}}
     {{ $posts := where site.RegularPages "Section" "in" (slice "post" "posts") }}
     {{ range first 10 ($posts.ByDate.Reverse) }}
     <article class="post-summary">
@@ -10,9 +10,10 @@
 
       <p class="post-meta">
         <time>{{ .Date | time.Format "2 January 2006, 3:04 pm" }}</time>
-        {{ if .Params.tags }}
+        {{ with .Params.tags }}
           &nbsp;·&nbsp;
-          {{ range $i, $tag := .Params.tags }}
+          {{ $n := sub (len .) 1 }}
+          {{ range $i, $tag := . }}
             {{ if $i }}, {{ end }}
             <a class="tag-link-inline" href="{{ "tags/" | relLangURL }}{{ $tag | urlize }}/">#{{ $tag }}</a>
           {{ end }}
@@ -25,8 +26,8 @@
       </div>
       {{ end }}
 
-      {{/* Only show Read more for long posts */}}
-      {{ if gt .WordCount 600 }}
+      {{/* Show Read more if the summary is truncated OR the post is long */}}
+      {{ if or .Truncated (gt .WordCount 600) }}
         <a class="read-more" href="{{ .Permalink }}">Read more →</a>
       {{ end }}
     </article>
