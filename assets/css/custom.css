@@ -467,13 +467,6 @@ header .main-nav a:focus {
 }
 
 @media (max-width: 768px) {
-  /* Reset default margins and avoid horizontal scroll */
-  html, body {
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow-x: hidden !important;
-  }
-
   /* Hide sidebar */
   .sidebar,
   aside,
@@ -481,58 +474,41 @@ header .main-nav a:focus {
     display: none !important;
   }
 
-  /* Single-column layout with no outer gutters on the wrapper */
+  /* Full-width single column, but avoid scrollbar overflow */
   .content-with-sidebar {
     display: block !important;
-    grid-template-columns: 1fr !important;
-    width: 100% !important;        /* avoid 100vw on iOS */
+    width: 100% !important;       /* avoids overflow from 100vw */
     max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
+    margin: 0 auto !important;    /* centers if needed */
+    padding: 0 1rem !important;   /* equal left/right gutter */
+    box-sizing: border-box;
   }
 
-  /* Main content spans full width, centered, with symmetric safe-area gutters */
   .content-with-sidebar > .main-content,
-  .content-with-sidebar > .main-article,
-  main {
+  .content-with-sidebar > .main-article {
     width: 100% !important;
     max-width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-
-    /* Even left/right padding, respecting iOS notches/edges */
-    padding-left: max(12px, env(safe-area-inset-left)) !important;
-    padding-right: max(12px, env(safe-area-inset-right)) !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-
-    box-sizing: border-box !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
   }
 
-  /* Post cards fill the available width but keep comfortable inner padding */
+  main {
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
   article,
   .post-summary,
   .home-post-content {
     width: 100% !important;
     max-width: 100% !important;
-    padding: 1rem !important;          /* inner text padding */
+    padding: 1rem !important;   /* consistent inner text padding */
     box-sizing: border-box !important;
   }
-
-  /* Optional: remove any stray container max-widths on mobile */
-  .content,
-  .container,
-  .wrap {
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  /* Type tweaks */
-  body { font-size: 15px !important; }
-  h1 { font-size: 1.6rem !important; }
-  h2 { font-size: 1.3rem !important; }
-  .post-summary h2 { font-size: 1.25rem !important; }
-  p, .home-post-content { font-size: 0.95rem !important; line-height: 1.5 !important; }
 }
