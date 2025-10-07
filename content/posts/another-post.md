@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "Democratising British History"
 date: 2025-10-01
 tags: ["uk-higher-ed", "british-history", "history"]
 draft: false
