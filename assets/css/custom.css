@@ -587,3 +587,7 @@ header .main-nav a:focus {
     padding: 0;
   }
 }
+
+.post-summary:last-child {
+  border-bottom: 1px solid var(--hr, #e5dada) !important;
+}
