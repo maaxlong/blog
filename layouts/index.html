@@ -2,8 +2,9 @@
 <div class="content-with-sidebar">
   <div class="main-content">
 
-    {{ $posts := where site.RegularPages "Type" "posts" }}
-    {{ range first 10 $posts }}
+    {{/* Use the posts sections; grab the latest 10 */}}
+    {{ $posts := where site.RegularPages "Section" "in" (slice "post" "posts") }}
+    {{ range first 10 ($posts.ByDate.Reverse) }}
     <article class="post-summary">
       <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
 
@@ -13,14 +14,21 @@
           &nbsp;·&nbsp;
           {{ range $i, $tag := .Params.tags }}
             {{ if $i }}, {{ end }}
-            <a class="tag-link-inline" href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}/">#{{ $tag }}</a>
+            <a class="tag-link-inline" href="{{ "tags/" | relLangURL }}{{ $tag | urlize }}/">#{{ $tag }}</a>
           {{ end }}
         {{ end }}
       </p>
 
+      {{ with .Summary }}
       <div class="home-post-content">
-        {{ .Content }}
+        {{ . | safeHTML }}
       </div>
+      {{ end }}
+
+      {{/* Only show Read more for long posts */}}
+      {{ if gt .WordCount 600 }}
+        <a class="read-more" href="{{ .Permalink }}">Read more →</a>
+      {{ end }}
     </article>
     {{ end }}
 

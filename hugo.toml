@@ -37,7 +37,7 @@ canonifyURLs = true  # ADD THIS LINE
   weight = 1
 
 [[menu.main]]
-  name = "Posts"
+  name = "Archive"
   url = "/posts/"
   weight = 2
 
