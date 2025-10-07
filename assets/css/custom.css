@@ -654,3 +654,20 @@ blockquote,
 /* If a summary ends with a blockquote, add a bit more breathing room */
 .post-summary .home-post-content blockquote { margin-bottom: 0.75rem; }
 .post-summary .home-post-content blockquote + .read-more { margin-top: 0.5rem; }
+
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+  font-size: 0.95rem;
+}
+.pagination .pages { display: inline-flex; gap: 0.4rem; }
+.pagination .page,
+.pagination .newer,
+.pagination .older { text-decoration: none; }
+.pagination .page.current {
+  font-weight: 700;
+  pointer-events: none;
+}

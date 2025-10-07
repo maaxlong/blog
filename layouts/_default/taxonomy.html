@@ -1,11 +1,14 @@
 {{ define "main" }}
 <div class="content-with-sidebar">
   <div class="main-content">
-    <h1>{{ if .Data.Singular }}{{ .Data.Singular | title }}: {{ .Title }}{{ else }}{{ .Title }}{{ end }}</h1>
+    <h1>
+      {{ if .Data.Singular }}{{ .Data.Singular | title }}: {{ .Title }}{{ else }}{{ .Title }}{{ end }}
+    </h1>
 
     {{/* Only show posts from post(s) sections, newest first, paginated */}}
     {{ $posts := where .Pages "Section" "in" (slice "post" "posts") }}
     {{ $p := .Paginate ($posts.ByDate.Reverse) }}
+
     {{ range $p.Pages }}
       <article class="post-summary h-entry">
         <h2 class="p-name"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
@@ -31,7 +34,22 @@
       </article>
     {{ end }}
 
-    {{ template "_internal/pagination.html" . }}
+    {{/* Simple inline pagination (no _internal dependency) */}}
+    {{ if gt $p.TotalPages 1 }}
+      <nav class="pagination" aria-label="Pagination">
+        {{ if $p.HasPrev }}<a class="newer" href="{{ $p.Prev.URL }}">&larr; Newer</a>{{ end }}
+        <span class="pages">
+          {{ range $p.Pagers }}
+            {{ if eq . $p }}
+              <span class="page current">{{ .PageNumber }}</span>
+            {{ else }}
+              <a class="page" href="{{ .URL }}">{{ .PageNumber }}</a>
+            {{ end }}
+          {{ end }}
+        </span>
+        {{ if $p.HasNext }}<a class="older" href="{{ $p.Next.URL }}">Older &rarr;</a>{{ end }}
+      </nav>
+    {{ end }}
   </div>
 
   {{ partial "sidebar.html" . }}
