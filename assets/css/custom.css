@@ -467,16 +467,40 @@ header .main-nav a:focus {
 }
 
 @media (max-width: 768px) {
+  /* Hide sidebar */
   .sidebar,
   aside,
   .site-sidebar {
     display: none !important;
   }
   
+  /* Make content full width on mobile */
+  body {
+    padding: 0 1rem !important;
+  }
+  
+  .container,
   .content,
   .main-content,
+  main,
   article {
     width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  /* Remove any flex or grid constraints */
+  .site-content,
+  .page-content,
+  .wrapper {
+    display: block !important;
+    width: 100% !important;
+  }
+  
+  /* Make sure text isn't constrained */
+  p, h1, h2, h3, h4, h5, h6, ul, ol {
     max-width: 100% !important;
   }
 }
