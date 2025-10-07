@@ -624,3 +624,15 @@ header .main-nav a:focus {
 .rss-link svg {
   fill: currentColor;
 }
+
+/* === Global blockquote spacing override === */
+blockquote,
+.blockquote,
+.home-post-content blockquote,
+.post-content blockquote,
+.main-content blockquote,
+.main-article .content blockquote,
+.content-with-sidebar .main-content article.post-summary .home-post-content blockquote {
+  margin-inline-start: 1rem !important;
+  padding: 0 !important;
+}
