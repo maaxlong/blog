@@ -476,10 +476,10 @@ header .main-nav a:focus {
   
   /* Force single column grid */
   .content-with-sidebar {
-    display: block !important;  /* Change from grid to block */
+    display: block !important;
     grid-template-columns: 1fr !important;
     width: 100% !important;
-    padding-inline: 1rem !important;
+    padding-inline: 0.5rem !important;  /* Reduced from 1rem */
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
@@ -493,7 +493,7 @@ header .main-nav a:focus {
   }
   
   main {
-    padding: 0 1rem !important;
+    padding: 0 0.5rem !important;  /* Reduced from 1rem */
     width: 100% !important;
   }
   
@@ -507,5 +507,29 @@ header .main-nav a:focus {
   .home-post-content {
     width: 100% !important;
     max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  /* Smaller text on mobile */
+  body {
+    font-size: 15px !important;  /* Base size reduction */
+  }
+  
+  h1 {
+    font-size: 1.6rem !important;
+  }
+  
+  h2 {
+    font-size: 1.3rem !important;
+  }
+  
+  .post-summary h2 {
+    font-size: 1.25rem !important;
+  }
+  
+  p, .home-post-content {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
   }
 }
