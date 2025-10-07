@@ -1,6 +1,5 @@
 {{ define "main" }}
 <h1>Search</h1>
-
 <div id="search">
   <input 
     id="search-input" 
@@ -11,22 +10,27 @@
   >
   <div id="search-results"></div>
 </div>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.6.2/fuse.min.js"></script>
 <script>
   const searchInput = document.getElementById('search-input');
   const searchResults = document.getElementById('search-results');
-
+  
   fetch('{{ .Site.BaseURL }}index.json')
     .then(response => response.json())
     .then(data => {
       const fuse = new Fuse(data, {
-        keys: ['title', 'content', 'tags'],
-        threshold: 0.4,
+        keys: [
+          { name: 'title', weight: 2 },
+          { name: 'content', weight: 1 },
+          { name: 'tags', weight: 1.5 }
+        ],
+        threshold: 0.2,          // More strict (was 0.4)
         includeScore: true,
-        minMatchCharLength: 2
+        minMatchCharLength: 2,
+        ignoreLocation: true,     // Search entire content
+        useExtendedSearch: true   // Enable better matching
       });
-
+      
       searchInput.addEventListener('input', function(e) {
         const query = e.target.value.trim();
         
@@ -34,35 +38,56 @@
           searchResults.innerHTML = '';
           return;
         }
-
+        
         const results = fuse.search(query);
         
         if (results.length === 0) {
           searchResults.innerHTML = '<p>No results found.</p>';
           return;
         }
-
+        
         const html = results.slice(0, 20).map(result => {
           const item = result.item;
+          
+          // Create a content preview with the search term highlighted
+          let preview = '';
+          if (item.content) {
+            const lowerContent = item.content.toLowerCase();
+            const lowerQuery = query.toLowerCase();
+            const index = lowerContent.indexOf(lowerQuery);
+            
+            if (index !== -1) {
+              const start = Math.max(0, index - 100);
+              const end = Math.min(item.content.length, index + query.length + 100);
+              preview = (start > 0 ? '...' : '') + 
+                        item.content.substring(start, end) + 
+                        (end < item.content.length ? '...' : '');
+            } else {
+              preview = item.content.substring(0, 200) + '...';
+            }
+          } else if (item.summary) {
+            preview = item.summary;
+          }
+          
           return `
             <article class="search-result">
-              <h2><a href="${item.permalink}">${item.title}</a></h2>
+              <h2><a href="${item.permalink}">${item.title || 'Untitled'}</a></h2>
               <p class="post-meta">${new Date(item.date).toLocaleDateString()}</p>
-              ${item.summary ? `<p>${item.summary}</p>` : ''}
+              ${preview ? `<p class="preview">${preview}</p>` : ''}
+              ${item.tags && item.tags.length > 0 ? 
+                `<p class="tags">Tags: ${item.tags.join(', ')}</p>` : ''}
             </article>
           `;
         }).join('');
-
+        
         searchResults.innerHTML = html;
       });
     });
 </script>
-
 <style>
 #search {
   margin-top: 2rem;
 }
-
 #search-input {
   width: 100%;
   padding: 0.75rem;
@@ -72,29 +97,32 @@
   background: var(--bg, #fff);
   color: var(--text, #000);
 }
-
 #search-input:focus {
   outline: none;
   border-color: var(--accent, #0066cc);
 }
-
 #search-results {
   margin-top: 2rem;
 }
-
 .search-result {
   margin-bottom: 2rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid var(--border, #eee);
 }
-
 .search-result:last-child {
   border-bottom: none;
 }
-
 .search-result h2 {
   margin-top: 0;
   margin-bottom: 0.5rem;
+}
+.search-result .preview {
+  color: var(--text-muted, #666);
+  line-height: 1.6;
+}
+.search-result .tags {
+  font-size: 0.9rem;
+  color: var(--text-muted, #666);
 }
 </style>
 {{ end }}
