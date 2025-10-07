@@ -1,3 +1,4 @@
+summaryLength = 250
 baseURL = "https://maaxlong.github.io/blog/"
 languageCode = "en-us"
 title = "Max Long's Blog"
@@ -30,7 +31,6 @@ canonifyURLs = true  # ADD THIS LINE
   # Custom CSS
   customCSS = ["css/custom.css"]
   
-  summaryLength = 250
 
 # Main menu
 [[menu.main]]
