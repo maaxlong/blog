@@ -31,6 +31,8 @@ canonifyURLs = true  # ADD THIS LINE
   # Custom CSS
   customCSS = ["css/custom.css"]
   
+  hideMadeWithLine = true
+  
 
 # Main menu
 [[menu.main]]
