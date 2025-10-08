@@ -16,6 +16,7 @@ canonifyURLs = true  # ADD THIS LINE
 [params]
   # Site description
   description = "Max Long's Blog'"
+  hideMadeWithLine = true
   
   # Author info (must be an object for hugo-simple theme)
   [params.author]
@@ -30,8 +31,6 @@ canonifyURLs = true  # ADD THIS LINE
   
   # Custom CSS
   customCSS = ["css/custom.css"]
-  
-  hideMadeWithLine = true
   
 
 # Main menu
