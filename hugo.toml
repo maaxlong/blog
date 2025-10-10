@@ -27,7 +27,7 @@ canonifyURLs = true  # ADD THIS LINE
   darkModeToggle = true
   
   # Number of recent posts to show
-  recentPostsLimit = 10
+  recentPostsLimit = 5
   
   # Custom CSS
   customCSS = ["css/custom.css"]
