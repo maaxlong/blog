@@ -1,4 +1,4 @@
-{
+This is my current frontmatter.json: {
   "$schema": "https://frontmatter.codes/frontmatter.schema.json",
   "frontMatter.taxonomy.contentTypes": [
     {
@@ -33,18 +33,6 @@
           "name": "tags",
           "type": "tags"
         }
-      ]
-    },
-    {
-      "name": "linkpost",
-      "pageBundle": false,
-      "previewPath": null,
-      "fileName": "{{date:YYYY-MM-DD}}-link.md",
-      "fields": [
-        { "title": "Link", "name": "link", "type": "string" },
-        { "title": "Publishing date", "name": "date", "type": "datetime", "default": "{{now}}", "isPublishDate": true },
-        { "title": "Is in draft", "name": "draft", "type": "draft" },
-        { "title": "Tags", "name": "tags", "type": "tags" }
       ]
     }
   ],
