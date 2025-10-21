@@ -1,0 +1,21 @@
+---
+title: Why I stopped listening to Hard Fork
+description: ""
+date: 2025-10-21T08:58:57.809Z
+preview: ""
+draft: false
+tags:
+    - ai
+    - podcasts
+categories: []
+keywords: []
+---
+Hard Fork is a weekly podcast published by the New York Times, and presented by Kevin Roose and Casey Newton. The show features discussions about new developments in tech, which in recent years generally translates to 'AI and little else'. I started listening to the podcast sometime around late 2023: ChatGPT had recently hit the headlines, and I was starting a new research fellowship on the Congruence Engine project which explored the use of digital methods in historical and curatorial work. But although AI was increasingly a subject matter of mainstream news coverage, I didn't feel like there were many places to keep up to speed with the latest developments in a way that was both detailed and accessible. 
+
+At first, Hard Fork seemed like a good way to get clued into the way that the world was being, or at any rate was about to be, transformed by the arrival of newly-transformative Large Language Models. I learned a lot by listening to Kevin and Casey discuss the inner workings of Silicon Valley, often through interviews secured with leading figures in the world of AI like Demis Hassabis or Dario Amadei. The tone, admittedly, was ocassinally a bit grating, but in this instance it had the upside of making the fast-paced world of tech understandable to a relative novice to the field. 
+
+But in recent months, I have found the podcast increasingly difficult to listen to, and it mostly boils down to an astounding lack of criticalily and journalistic practice in the way that Casey and Kevin discuss the promises and perils of Artificial Intelligence. I know that I'm not alone in thinking this: a few months back, in July, they included [a feature in one of their shows](https://podcasts.apple.com/us/podcast/trump-fights-woke-a-i-we-hear-out-our-critics/id1528594034?i=1000718974302) where they played voicenotes from some of their critics, including [Brian Merchant from Blood in the Machine](https://www.bloodinthemachine.com/). These critics summed up the growing unease that I had started to feel while listening to the podcast: a gradual trend towards AI-boosterism, an unflinching confidence in the idea that General Artificial Intelligence is 'just around the corner', and that this will be a net positive to humanity. 
+
+To be sure, Kevin and Casey have never articulated a consistent criticism of the AI boom and its advocates: their stance has usually been decidedly - and at times infuriatingly - centrist. Ocasionally they will pick holes with only the most outrageous claims made by Silicon Valley companies and leaders, and they will also often make fun of the most egregious cases of AI 'slop'. But on balance Hard Fork increasingly resembles AI corporate marketing, and there is little to distinguish their stance towards the technology from that of most mainstream commentators. It feels like both presenters are simply too close to, or even too invested in, their subject matter to maintain a more journalistic approach. The intellectual, ethical, and environmental risks that we are presented with today are not just fundamental to the discussion about AI: they should also be questions that are interesting even to the staunchest advocates of the technology, but they are not questions that Hard Fork treats with any level of seriousness. 
+
+It's especially telling that Kevin and Casey felt that addressing the serious, valid concerns of their critics was something that they should cover in a separate, one-off, segment of the show: it was an opportunity to bat off these mounting criticisms and explain why they still believe that their approach to AI is rational and right, instead of taking virtually any of this criticism on board. Most of the points raised by their critics have also not resfurfaced in subsequent episodes. This is goodbye from me, at least for now, while I seek more balanced, crticial, and interesting insights on the place of AI in present-day culture and society!
