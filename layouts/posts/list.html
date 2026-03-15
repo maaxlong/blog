@@ -7,11 +7,11 @@
     {{ $pages := (where site.RegularPages "Section" "in" (slice "post" "posts")).ByDate.Reverse }}
 
     {{/* Group by YEAR (newest first) */}}
-    {{ range $year := ($pages.GroupByDate "2006").Reverse }}
+    {{ range $year := ($pages.GroupByDate "2006") }}
       <h2 class="archive-year">{{ $year.Key }}</h2>
 
       {{/* Within each year, group by MONTH (newest first) */}}
-      {{ range $month := ($year.Pages.GroupByDate "January").Reverse }}
+      {{ range $month := ($year.Pages.GroupByDate "January") }}
         <h3 class="archive-month">{{ $month.Key }}</h3>
         <ul class="archive-list">
           {{ range $post := ($month.Pages.ByDate.Reverse) }}
