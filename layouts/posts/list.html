@@ -4,7 +4,7 @@
     <h1 class="archive-title">Archive</h1>
 
     {{/* Collect posts; use both 'post' and 'posts' sections */}}
-    {{ $pages := where site.RegularPages "Section" "in" (slice "post" "posts") }}
+    {{ $pages := (where site.RegularPages "Section" "in" (slice "post" "posts")).ByDate.Reverse }}
 
     {{/* Group by YEAR (newest first) */}}
     {{ range $year := ($pages.GroupByDate "2006").Reverse }}
